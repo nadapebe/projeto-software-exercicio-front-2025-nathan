@@ -9,8 +9,10 @@ createRoot(document.getElementById('root')).render(
     clientId="1d7KEc71I9mQaEKydfOtVi454L3cjkuB"
     authorizationParams={{
       audience: "https://curso-api",
-      redirect_uri: window.location.origin,
+      redirect_uri: window.location.origin, // volta para /
     }}
+    cacheLocation="localstorage"   // <— importante para evitar loop
+    useRefreshTokens               // <— importante para evitar loop
   >
     <App />
   </Auth0Provider>
